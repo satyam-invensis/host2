@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             loading.style.display = 'block'; // Show loading indicator
 
-            fetch('http://localhost:3000/predict', {
+            fetch('/predict', {
                 method: 'POST',
                 body: new URLSearchParams(formData)
             })
