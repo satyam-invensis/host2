@@ -221,18 +221,51 @@
             color: white;
         }
 
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column; /* Stack vertically */
-            }
+       /* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack vertically */
+    }
+    .metrics-section {
+        width: 100%; /* 100% width on mobile */
+        border-left: none; /* Remove left border */
+        border-top: 1px solid #ccc; /* Add top border */
+    }
+    
+    /* Decrease font sizes for mobile */
+    .logo {
+        font-size: 7.5px; /* Decrease 4x from 30px */
+    }
+    
+    .description-section h4 {
+        font-size: 4.5px; /* Decrease 4x from 18px */
+    }
 
-            .metrics-section {
-                width: 100%; /* 100% width on mobile */
-                border-left: none; /* Remove left border */
-                border-top: 1px solid #ccc; /* Add top border */
-            }
-        }
+    .description-text {
+        font-size: 4px; /* Decrease 4x from 16px */
+    }
+
+    .try-another-btn {
+        font-size: 4px; /* Decrease 4x from 16px */
+    }
+
+    .hs-code {
+        font-size: 6px; /* Decrease 4x from 24px */
+    }
+
+    .confidence {
+        font-size: 4.5px; /* Decrease 4x from 18px */
+    }
+
+    .metrics-section h4 {
+        font-size: 4.5px; /* Decrease 4x from 18px */
+    }
+
+    .metrics-section p {
+        font-size: 4px; /* Decrease 4x from 16px */
+    }
+}
+
     </style>
 </head>
 <body>
