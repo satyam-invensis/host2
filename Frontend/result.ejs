@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HS Code Prediction</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* General Styles */
@@ -45,9 +44,9 @@
             height: 100vh;
             justify-content: space-between;
             margin-top: 60px;
+            width: 90%;
             margin-left: auto;
             margin-right: auto;
-            width: 90%;
         }
 
         .main-content {
@@ -85,11 +84,10 @@
             color: white;
             padding: 8px 12px;
             border: none;
-            cursor: pointer;
             border-radius: 4px;
             text-decoration: none;
-            display: inline-block;
             font-size: 16px;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
 
@@ -223,11 +221,12 @@
             color: white;
         }
 
-        /* Media Query for Mobile Devices */
+        /* Media Queries */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column; /* Stack vertically */
             }
+
             .metrics-section {
                 width: 100%; /* 100% width on mobile */
                 border-left: none; /* Remove left border */
