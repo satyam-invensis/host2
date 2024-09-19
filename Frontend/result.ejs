@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HS Code Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* General Styles */
@@ -44,9 +45,9 @@
             height: 100vh;
             justify-content: space-between;
             margin-top: 60px;
-            width: 90%;
             margin-left: auto;
             margin-right: auto;
+            width: 90%;
         }
 
         .main-content {
@@ -84,10 +85,11 @@
             color: white;
             padding: 8px 12px;
             border: none;
+            cursor: pointer;
             border-radius: 4px;
             text-decoration: none;
+            display: inline-block;
             font-size: 16px;
-            cursor: pointer;
             transition: background-color 0.3s;
         }
 
@@ -179,22 +181,26 @@
         .hs-breakdown {
             display: flex;
             justify-content: space-between;
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
             margin-bottom: 30px;
         }
 
         .hs-breakdown div {
             flex: 1;
             text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px; /* Added margin for spacing */
         }
 
-        .hs-breakdown p {
+        .hs-breakdown div p {
             margin: 5px 0;
             font-weight: 600;
         }
+
+        .chapter { background-color: #e0f7fa; } /* Light blue */
+        .heading { background-color: #ffe0b2; } /* Light orange */
+        .subheading { background-color: #c8e6c9; } /* Light green */
+        .hs-code-block { background-color: #f8bbd0; } /* Light pink */
 
         .metrics-section {
             width: 30%; /* 30% width on larger screens */
@@ -221,51 +227,31 @@
             color: white;
         }
 
-       /* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack vertically */
-    }
-    .metrics-section {
-        width: 100%; /* 100% width on mobile */
-        border-left: none; /* Remove left border */
-        border-top: 1px solid #ccc; /* Add top border */
-    }
-    
-    /* Decrease font sizes for mobile */
-    .logo {
-        font-size: 7.5px; /* Decrease 4x from 30px */
-    }
-    
-    .description-section h4 {
-        font-size: 4.5px; /* Decrease 4x from 18px */
-    }
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            body {
+                font-size: calc(16px + 4px); /* Increase font size by 4px */
+            }
 
-    .description-text {
-        font-size: 4px; /* Decrease 4x from 16px */
-    }
+            .container {
+                flex-direction: column; /* Stack vertically */
+            }
 
-    .try-another-btn {
-        font-size: 4px; /* Decrease 4x from 16px */
-    }
+            .metrics-section {
+                width: 100%; /* 100% width on mobile */
+                border-left: none; /* Remove left border */
+                border-top: 1px solid #ccc; /* Add top border */
+            }
 
-    .hs-code {
-        font-size: 6px; /* Decrease 4x from 24px */
-    }
+            .hs-breakdown {
+                flex-direction: column; /* Stack vertically on mobile */
+            }
 
-    .confidence {
-        font-size: 4.5px; /* Decrease 4x from 18px */
-    }
-
-    .metrics-section h4 {
-        font-size: 4.5px; /* Decrease 4x from 18px */
-    }
-
-    .metrics-section p {
-        font-size: 4px; /* Decrease 4x from 16px */
-    }
-}
-
+            .hs-breakdown div {
+                width: 100%; /* Full width for mobile */
+                margin: 5px 0; /* Margin for spacing */
+            }
+        }
     </style>
 </head>
 <body>
@@ -298,19 +284,19 @@
 
             <!-- HS Breakdown -->
             <div class="hs-breakdown">
-                <div>
+                <div class="chapter">
                     <p>Chapter</p>
                     <p><%= selectedHTSNumber.substring(0, 2) %></p>
                 </div>
-                <div>
+                <div class="heading">
                     <p>Heading</p>
                     <p><%= selectedHTSNumber.substring(0, 4) %></p>
                 </div>
-                <div>
+                <div class="subheading">
                     <p>Subheading</p>
                     <p><%= selectedHTSNumber.substring(0, 6) %></p>
                 </div>
-                <div>
+                <div class="hs-code-block">
                     <p>HS Code</p>
                     <p><%= selectedHTSNumber %></p>
                 </div>
